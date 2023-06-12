@@ -1,0 +1,2 @@
+module PaymentReportsHelper
+end
