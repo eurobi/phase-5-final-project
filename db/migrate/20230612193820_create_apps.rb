@@ -1,7 +1,7 @@
 class CreateApps < ActiveRecord::Migration[7.0]
   def change
     create_table :apps do |t|
-      t.string :ambassador_id
+      t.integer :ambassador_id
       t.string :last_name
       t.string :first_name
       t.string :type

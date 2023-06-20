@@ -3,8 +3,8 @@ class CreateSales < ActiveRecord::Migration[7.0]
     create_table :sales do |t|
       t.string :date
       t.decimal :amount
-      t.string :ambassador_id
-      t.string :payment_report_id
+      t.integer :ambassador_id
+      t.integer :payment_report_id
       t.string :coupon_code
       t.timestamps
     end

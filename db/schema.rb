@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_12_194800) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_182721) do
   create_table "ambassadors", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -19,13 +19,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_194800) do
     t.boolean "lifetime_commission"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "app_id"
   end
 
   create_table "apps", force: :cascade do |t|
-    t.string "ambassador_id"
+    t.integer "ambassador_id"
     t.string "last_name"
     t.string "first_name"
-    t.string "type"
+    t.string "ambassador_type"
     t.string "mailing_address"
     t.string "website"
     t.string "tiktok_handle"
@@ -49,8 +50,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_12_194800) do
   create_table "sales", force: :cascade do |t|
     t.string "date"
     t.decimal "amount"
-    t.string "ambassador_id"
-    t.string "payment_report_id"
+    t.integer "ambassador_id"
+    t.integer "payment_report_id"
     t.string "coupon_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
