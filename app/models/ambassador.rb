@@ -6,5 +6,5 @@ class Ambassador < ApplicationRecord
     validates :email, presence: true
     validates :email, uniqueness: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-    validates :coupon_code, uniqueness: true
+    validates :coupon_code, uniqueness: true, :allow_nil => true
 end

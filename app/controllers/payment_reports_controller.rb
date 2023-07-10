@@ -6,6 +6,6 @@ class PaymentReportsController < ApplicationController
 
     def show
         report = PaymentReport.find_by(id: params[:id])
-        render json: report
+        render json: report, serializer: PaymentReportDetailsSerializer
     end
 end

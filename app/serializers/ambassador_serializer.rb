@@ -1,5 +1,5 @@
 class AmbassadorSerializer < ActiveModel::Serializer
-  attributes :id, :sales_count, :sales_total, :commission_earned, :last_14_days, :payments, :app
+  attributes :id, :email, :sales_count, :commission_rate, :sales_total, :commission_earned, :last_14_days, :payments, :app
 
   def sales_count
     object.sales.count
@@ -38,7 +38,7 @@ class AmbassadorSerializer < ActiveModel::Serializer
     payments = reports.map do |report|
       sales = Sale.where("ambassador_id = ? AND date LIKE ?", object.id.to_s, "%#{report.month}%")
       commission = sales.sum {|sale| sale[:amount]} * object.commission_rate
-      {"month"=> report.month, "commission earned"=> commission, "paid?"=> report.sent}
+      {"month"=> report.month, "commission_earned"=> commission, "paid"=> report.sent}
     end
     payments
   end
