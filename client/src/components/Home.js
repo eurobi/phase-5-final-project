@@ -38,7 +38,7 @@ function Home(){
         //if ambassador hasn't applied
         }else{
             return(
-                <Application></Application>
+                <Application amb={amb}></Application>
             )
 
         }

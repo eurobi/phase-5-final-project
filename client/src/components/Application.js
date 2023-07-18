@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Application(){
+function Application({amb}){
      const [formData, setFormData] = useState({
         first_name : '',
         last_name : '',
@@ -12,7 +12,7 @@ function Application(){
         instagram_handle: '',
         twitter_handle: '',
         other_info: '',
-        ambassador_id: 8
+        ambassador_id: amb.id
      })
 
      function handleSubmit(e){
