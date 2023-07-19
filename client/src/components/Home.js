@@ -2,30 +2,21 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Application from "./Application"
 import Dashboard from "./Dashboard"
+import Login from "./Login"
+import Navbar from "./Navbar"
 
-function Home(){
-
-    const { id } = useParams()
-
-    const [amb, setAmb] = useState()
-    
-    useEffect(() => {
-        fetch(`/ambassadors/${id}`)
-        .then((r) => r.json())
-        .then((amb) => setAmb(amb))
-    },[])
-
+function Home({ambassador, setAmbassador}){
     
     // if ambassador exists
-    if(amb){
+    if(ambassador){
         //if ambassador exists and has applied
-        if(amb.app){
+        if(ambassador.app){
             //if ambasssador exists, applied, was accepted
-            if(amb.app.accepted){
+            if(ambassador.app.accepted){
                 return(
-                    <Dashboard amb={amb}></Dashboard>)
+                    <Dashboard ambassador={ambassador}></Dashboard>)
                 //if ambassador exists, applied, and is pending
-                }else if(amb.app.accepted == null){
+                }else if(ambassador.app.accepted == null){
                     return(
                         <h1>Pending</h1>
                     )
@@ -38,13 +29,15 @@ function Home(){
         //if ambassador hasn't applied
         }else{
             return(
-                <Application amb={amb}></Application>
+                <Application ambassador={ambassador}></Application>
             )
 
         }
     // if abassador doesnt exist
     }else{
-        <h1>non-existant</h1>
+        return(
+        <Login setAmbassador={setAmbassador}></Login>
+        )
     }
 
 }

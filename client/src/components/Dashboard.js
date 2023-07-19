@@ -1,22 +1,22 @@
 import PaymentCard from "./PaymentCard"
 
-function Dashboard({amb}){
+function Dashboard({ambassador}){
     return(
         <div>
-                    <h1>Welcome, {amb.app.first_name} {amb.app.last_name}</h1>
+                    <h1>Welcome, {ambassador.app.first_name} {ambassador.app.last_name}</h1>
                     <h2>Sales Summary</h2>
                     <div class='card' id='dashboard-stats-card'>
                         <div class='dashboard-stat-item'>
-                            <p><strong>All-time Sales Count:</strong> {amb.sales_count}</p>
+                            <p><strong>All-time Sales Count:</strong> {ambassador.sales_count}</p>
                         </div>
                         <div class='dashboard-stat-item'>
-                            <p><strong>All-time Sales Amount:</strong> ${amb.sales_total}</p>
+                            <p><strong>All-time Sales Amount:</strong> ${ambassador.sales_total}</p>
                         </div>
                         <div class='dashboard-stat-item'>
-                            <p><strong>Commission Rate:</strong> {amb.commission_rate * 100}%</p>
+                            <p><strong>Commission Rate:</strong> {ambassador.commission_rate * 100}%</p>
                         </div> 
                         <div class='dashboard-stat-item'>
-                            <p><strong>All-time Commission Earned:</strong> ${amb.commission_earned}</p>
+                            <p><strong>All-time Commission Earned:</strong> ${ambassador.commission_earned}</p>
                         </div> 
 
                     </div>
@@ -34,7 +34,7 @@ function Dashboard({amb}){
                             <p>Payment Amount</p>
                             <p>Status</p>
                         </div>
-                            {amb.payments? amb.payments.map((payment) => <PaymentCard payment={payment}></PaymentCard>) : null}
+                            {ambassador.payments? ambassador.payments.map((payment) => <PaymentCard payment={payment}></PaymentCard>) : null}
                         </div>
                     </div>
                 </div>

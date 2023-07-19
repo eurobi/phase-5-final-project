@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function SignUpForm(){
+function SignUpForm({setAmbassador}){
 
     const [formData, setFormData] = useState({
         email: "",
@@ -20,7 +20,7 @@ function SignUpForm(){
         .then(r => {
             if(r.ok){
                 r.json()
-                .then((amb) => console.log(amb))
+                .then((amb) => setAmbassador(amb))
             }
             else{
                 r.json()

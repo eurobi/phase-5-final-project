@@ -11,6 +11,11 @@ class AmbassadorsController < ApplicationController
         render json: ambassador
     end
 
+    def auth
+        ambassador = Ambassador.find_by(id: session[:ambassador_id])
+        render json: ambassador
+    end
+
     def create
         ambassador = Ambassador.create(ambassador_params)
         if ambassador.valid?

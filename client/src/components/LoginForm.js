@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function LoginForm(){
+function LoginForm({setAmbassador}){
 
     const [formData, setFormData] = useState({
         email: "",
@@ -19,8 +19,8 @@ function LoginForm(){
         .then(r => {
             if(r.ok){
                 r.json()
-                .then(user => {
-                    console.log(user)
+                .then(ambassador => {
+                    setAmbassador(ambassador)
                 })
             }else{
                 r.json()
@@ -34,8 +34,8 @@ function LoginForm(){
                 <label for='login-email-input'>Email</label>
                 <input onChange={(e) => setFormData({...formData, email: e.target.value})} value={formData.email} id='login-username-input' class='custom-input'></input>
                 <label for='login-password-input'>Password</label>
-                <input id='login-password-input' class='custom-input'></input>
-                <input onChange={(e) => setFormData({...formData, password: e.target.value})} value={formData.password} class='submit-btn' type='submit'></input>
+                <input onChange={(e) => setFormData({...formData, password: e.target.value})} value={formData.password} id='login-password-input' class='custom-input'></input>
+                <input class='submit-btn' type='submit'></input>
             </form>
     )
 }

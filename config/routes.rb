@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'ambassadors#create'
   post '/login', to: 'sessions#create'
+  get '/auth', to: 'ambassadors#auth'
+  delete '/logout', to: 'sessions#destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

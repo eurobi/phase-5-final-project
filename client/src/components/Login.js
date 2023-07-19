@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm"
 import SignUpForm from "./SignUpForm"
 
 
-function Login(){
+function Login({setAmbassador}){
     const [loggingIn, setLoggingIn] = useState(true)
 
     return(
@@ -12,7 +12,7 @@ function Login(){
                 <button onClick={()=> setLoggingIn(true)} id={loggingIn? "selected-login" : null} class='login-signup-toggle'>Login</button>
                 <button onClick={()=> setLoggingIn(false)} id={loggingIn? null : "selected-login"} class='login-signup-toggle'>Signup</button>
             </div>
-            {loggingIn? <LoginForm/> : <SignUpForm/>}
+            {loggingIn? <LoginForm setAmbassador={setAmbassador}/> : <SignUpForm setAmbassador={setAmbassador}/>}
         </div>
     )
 }
