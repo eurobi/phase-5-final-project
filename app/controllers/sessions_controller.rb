@@ -27,4 +27,11 @@ class SessionsController < ApplicationController
             render json: {errors: ["unauthorized"]}, status: :unauthorized
         end
     end
+    def admindestroy
+        if session[:admin_id]
+            session.delete(:admin_id)
+        else
+            render json: {errors: ["unauthorized"]}, status: :unauthorized
+        end
+    end
 end

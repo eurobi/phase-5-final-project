@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/auth', to: 'ambassadors#auth'
   get '/admin/auth', to: 'admins#auth'
   delete '/logout', to: 'sessions#destroy'
+  delete '/admin/logout', to: 'sessions#admindestroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

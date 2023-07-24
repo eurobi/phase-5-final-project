@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar ambassador={ambassador} setAmbassador={setAmbassador}></Navbar>
+      <Navbar admin={admin} setAdmin={setAdmin} ambassador={ambassador} setAmbassador={setAmbassador}></Navbar>
       <Routes>
         <Route path='/' element={<Home ambassador={ambassador} setAmbassador={setAmbassador}></Home>}></Route>
         <Route path='/ambassadors/:id' element={<Home ambassador={ambassador}></Home>}></Route>
