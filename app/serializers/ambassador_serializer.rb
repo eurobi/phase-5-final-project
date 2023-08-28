@@ -1,5 +1,5 @@
 class AmbassadorSerializer < ActiveModel::Serializer
-  attributes :id, :email, :sales_count, :commission_rate, :sales_total, :commission_earned, :last_14_days, :payments, :app
+  attributes :id, :email, :sales_count, :commission_rate, :sales_total, :commission_earned, :last_14_days, :last_14_max, :payments, :app
 
   def sales_count
     object.sales.count
@@ -22,7 +22,7 @@ class AmbassadorSerializer < ActiveModel::Serializer
     sales = Sale.select('date, SUM(amount) AS total_amount').where(ambassador_id: object.id.to_s).group(:date)
     l_14 = []
     14.times do |count|
-      day = yesterday - count
+      day = yesterday - 13 + count
       found = sales.find {|sale| sale[:date] == day.to_s}
       if found
         l_14 << found
@@ -31,6 +31,22 @@ class AmbassadorSerializer < ActiveModel::Serializer
       end
     end
     l_14
+  end
+
+  def last_14_max
+    yesterday = Date.yesterday
+    sales = Sale.select('date, SUM(amount) AS total_amount').where(ambassador_id: object.id.to_s).group(:date)
+    max = 0
+    14.times do |count|
+      day = yesterday - 13 + count
+      found = sales.find {|sale| sale[:date] == day.to_s}
+      if found 
+        if found.total_amount > max
+          max = found.total_amount
+        end
+      end
+    end
+    max
   end
 
   def payments

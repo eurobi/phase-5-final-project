@@ -5,6 +5,10 @@ import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Admin from './components/Admin';
+import AmbassadorList from './components/AmbassadorList';
+import ApplicationList from './components/ApplicationList';
+import PaymentList from './components/PaymentList';
+import PaymentDetails from './components/PaymentDetails';
 
 function App() {
 
@@ -37,6 +41,10 @@ function App() {
         <Route path='/' element={<Home ambassador={ambassador} setAmbassador={setAmbassador}></Home>}></Route>
         <Route path='/ambassadors/:id' element={<Home ambassador={ambassador}></Home>}></Route>
         <Route path='/admin' element={<Admin admin={admin} setAdmin={setAdmin}></Admin>}></Route>
+        <Route path='/admin/ambassadors' element={<AmbassadorList admin={admin} setAdmin={setAdmin}></AmbassadorList>}></Route>
+        <Route path='/admin/ambassadors/:id' element={<Home admin={admin} ambassador={ambassador}></Home>}></Route>
+        <Route path='/admin/payment_reports' element={<PaymentList admin={admin}></PaymentList>}></Route>
+        <Route path='/admin/payment_reports/:id' element={<PaymentDetails admin={admin}></PaymentDetails>}></Route>
       </Routes>
     </div>
   );

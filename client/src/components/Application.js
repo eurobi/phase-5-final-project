@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Application({ambassador}){
+function Application({setAmbassador, ambassador}){
      const [formData, setFormData] = useState({
         first_name : '',
         last_name : '',
@@ -23,12 +23,19 @@ function Application({ambassador}){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
+        }).then(r=> {
+            if(r.ok){
+                r.json()
+                .then(app => {
+                    setAmbassador({...ambassador, app: app})
+                })
+            }
         })
      }
 
 
     return(
-        <div class="card">
+        <div id='app-card' class="card">
             <h1>Apply to become a Sundays Partner</h1>
             <form id='application-form' onSubmit={handleSubmit}>
                 <label for='first-name-input'>First Name *</label>

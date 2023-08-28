@@ -21,7 +21,7 @@
 }
 
 .card{
-  background-color: rgb(251, 245, 56);
+  background-color: rgb(253, 206, 0);
   width: 80%;
   margin-top: 10px;
   margin-left: 10%;
@@ -35,6 +35,11 @@
 
 #login-card{
   margin-top: 10%
+}
+
+#admin-login-card{
+  margin-top: 10%;
+  padding-top: 35px
 }
 
 #login-form{
@@ -88,7 +93,7 @@
 }
 
 #selected-login{
-  background-color: rgb(251, 245, 56);
+  background-color: rgb(253, 206, 0);
   border-color: rgb(186, 152, 0);
   /* border-bottom-style: solid; */
   font-size: 20px;
@@ -133,6 +138,9 @@
   height: 300px;
   background-color: white;
   margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .payment-report-summary{
@@ -149,12 +157,128 @@
 }
 
 .nav-bar{
-  background-color: rgb(255, 234, 0);
+  background-color: rgb(253, 206, 0);
   height: 50px;
   width: 100%;
   margin: 0;
   display: flex;
-  justify-content: left;
+}
+
+#app-item{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#application-list-card{
+  padding-top: 20px;
+  margin-top: 35px;
+}
+
+#admin-stats-card{
+  display: flex;
+  flex-direction: row;
+}
+
+.custom-button{
+  background-color: rgb(253, 206, 0);
+  border-style: none;
+  height: 50px;
+  margin-bottom: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+ }
+
+ .nav-link{
+  text-decoration: none;
+  color: black;
+
+ }
+
+.custom-button:hover{
+  background-color: rgb(255, 224, 85);
 }
 
 
+#app-card{
+  margin-top: 50px;
+}
+
+.l14-bar{
+  background-color: rgb(48, 183, 3);
+  width:100%;
+  color: white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-color: white;
+  border-style: solid;
+  border-bottom-style: none;
+  
+}
+
+.payment-table{
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.table-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download-button{
+  background-color: rgb(253, 206, 0);
+  border-style: none;
+  height: 50px;
+  margin-bottom: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+ }
+
+ .download-button:hover{
+  background-color: rgb(255, 224, 85);
+}
+
+#payment-report-container{
+  margin-top: 30px;
+}
+
+.details-button{
+  background-color: rgb(253, 206, 0);
+  border-style: none;
+  height: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  align-self: center;
+ }
+
+ .details-button:hover{
+  background-color: rgb(255, 224, 85);
+}
+
+.app-action-div{
+  background-color: rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}

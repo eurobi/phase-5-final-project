@@ -29,23 +29,29 @@
     
 # ])
 
-payment_reports = PaymentReport.create([
-    { month: '2023-05', sent: false },
-    { month: '2023-06', sent: false }
-])
+# payment_reports = PaymentReport.create([
+#     { month: '2023-07', sent: false },
+#     { month: '2023-08', sent: false }
+# ])
 
 sales = Sale.create([
-    {date: '2023-05-01', amount: 100, ambassador_id: 1, payment_report_id: 7},
-    {date: '2023-05-03', amount: 85, ambassador_id: 1, payment_report_id: 7},
-    {date: '2023-05-07', amount: 200, ambassador_id: 2, payment_report_id: 7},
-    {date: '2023-05-07', amount: 115, ambassador_id: 2, payment_report_id: 7},
-    {date: '2023-05-15', amount: 75, ambassador_id: 2, payment_report_id: 7},
-    {date: '2023-05-20', amount: 80, ambassador_id: 1, payment_report_id: 7},
-    {date: '2023-06-5', amount: 100, ambassador_id: 1, payment_report_id: 8},
-    {date: '2023-06-07', amount: 120, ambassador_id: 1, payment_report_id: 8},
-    {date: '2023-06-09', amount: 70, ambassador_id: 1, payment_report_id: 8},
-    {date: '2023-06-10', amount: 125, ambassador_id: 2, payment_report_id: 8}
+    {date: '2023-08-01', amount: 100, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-03', amount: 85, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-07', amount: 200, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-07', amount: 115, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-04', amount: 75, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-06', amount: 80, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-05', amount: 100, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-07', amount: 120, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-09', amount: 70, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-10', amount: 125, ambassador_id: 1, payment_report_id: 12}
 ])
+
+# admin = Admin.create({
+#     email: "jeremy.w.barbara@gmail.com",
+#     password: "password"
+#     password_confirmation: "password"
+# })
 
 
 

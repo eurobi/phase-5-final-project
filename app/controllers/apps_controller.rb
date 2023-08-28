@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
-        apps = App.all
+        apps = App.where(accepted: nil)
         render json: apps
     end
 

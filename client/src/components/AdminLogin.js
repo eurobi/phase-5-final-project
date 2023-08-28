@@ -32,7 +32,7 @@ function AdminLogin({setAdmin}){
     }
 
     return(
-        <div class='card' id='login-card'>
+        <div class='card' id='admin-login-card'>
             <form onSubmit={handleSubmit} id='login-form'>
                 <label for='login-email-input'>Email</label>
                 <input onChange={(e) => setFormData({...formData, email: e.target.value})} value={formData.email} id='login-username-input' class='custom-input'></input>

@@ -8,7 +8,7 @@ class PaymentReportDetailsSerializer < ActiveModel::Serializer
          {"ambassador_id" => payment.ambassador_id,
          "coupon_code" => payment.coupon_code,
          "email" => payment.email,
-         "commissions earned" => payment.total_amount * 0.15
+         "total" => payment.total_amount * 0.15
         }
       end
   end
