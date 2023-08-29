@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 function Application({setAmbassador, ambassador}){
+    const [error, setError] = useState()
      const [formData, setFormData] = useState({
         first_name : '',
         last_name : '',
@@ -29,6 +30,9 @@ function Application({setAmbassador, ambassador}){
                 .then(app => {
                     setAmbassador({...ambassador, app: app})
                 })
+            }else{
+                r.json()
+                .then((e) => setError(e.errors))
             }
         })
      }
@@ -74,7 +78,7 @@ function Application({setAmbassador, ambassador}){
 
                 <label for='other-input'>Please add any other information/links that you think we should have</label>
                 <input value={formData.other_info} onChange={(e)=> {setFormData({...formData, other_info: e.target.value})}} id='other-input' class='custom-input-long'></input>
-
+                {error? <p className="error-message">{error}</p> : null}
                 <input class='submit-btn' type='submit'></input>
             </form>
         </div>

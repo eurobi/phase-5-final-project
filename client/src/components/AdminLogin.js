@@ -4,6 +4,8 @@ import LoginForm from "./LoginForm"
 
 function AdminLogin({setAdmin}){
 
+    const [error, setError] = useState()
+
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -26,7 +28,7 @@ function AdminLogin({setAdmin}){
                 })
             }else{
                 r.json()
-                .then(error => console.log(error))
+                .then(error => setError(error))
             }
         })
     }
@@ -37,7 +39,8 @@ function AdminLogin({setAdmin}){
                 <label for='login-email-input'>Email</label>
                 <input onChange={(e) => setFormData({...formData, email: e.target.value})} value={formData.email} id='login-username-input' class='custom-input'></input>
                 <label for='login-password-input'>Password</label>
-                <input onChange={(e) => setFormData({...formData, password: e.target.value})} value={formData.password} id='login-password-input' class='custom-input'></input>
+                <input type="password" onChange={(e) => setFormData({...formData, password: e.target.value})} value={formData.password} id='login-password-input' class='custom-input'></input>
+                {error? <p className="error-message">{error.error}</p> : null}
                 <input class='submit-btn' type='submit'></input>
             </form>
         </div>

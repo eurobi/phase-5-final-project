@@ -13,9 +13,9 @@ class AppsController < ApplicationController
     def create
         app = App.create(app_params)
         if app.valid?
-            render json: app
+            render json: app, status: :created
         else
-            render app.errors
+            render app.errors, status: :unprocessable_entity
         end
     end
 

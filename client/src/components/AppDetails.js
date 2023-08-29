@@ -25,6 +25,12 @@ function AppDetails({application}){
             if(r.ok){
                 r.json().then(application => {
                     setApplications([...applications].filter((app)=> app.id !== application.app.id))
+                    setFormData({
+                        coupon_code: "",
+                        commission_rate: 0,
+                        lifetime_commission: false
+                
+                    })
                 })
             }
         })

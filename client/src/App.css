@@ -282,3 +282,13 @@ td, th {
   flex-direction: column;
   border-radius: 10px;
 }
+
+.admin-ambassador-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-message{
+  color: red;
+}

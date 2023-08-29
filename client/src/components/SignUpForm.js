@@ -8,6 +8,8 @@ function SignUpForm({setAmbassador}){
         password_confirmation: ""
     })
 
+    const [error, setError] = useState()
+
     function handleSubmit(e){
         e.preventDefault()
         fetch('/signup', {
@@ -24,7 +26,7 @@ function SignUpForm({setAmbassador}){
             }
             else{
                 r.json()
-                .then((e) => console.log(e.errors))
+                .then((e) => setError(e.errors))
             }
         })
     }
@@ -35,9 +37,10 @@ function SignUpForm({setAmbassador}){
                 <label for='signup-email-input'>Email</label>
                 <input value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} id='signup-username-input' class='custom-input'></input>
                 <label for='signup-password-input'>Password</label>
-                <input value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} id='signup-password-input' class='custom-input'></input>
+                <input type="password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} id='signup-password-input' class='custom-input'></input>
                 <label for='signup-password-conf-input'>Confirm Password</label>
-                <input value={formData.password_confirmation} onChange={(e) => setFormData({...formData, password_confirmation: e.target.value})} id='signup-password-conf-input' class='custom-input'></input>
+                <input type="password" value={formData.password_confirmation} onChange={(e) => setFormData({...formData, password_confirmation: e.target.value})} id='signup-password-conf-input' class='custom-input'></input>
+                {error? <p className="error-message">{error}</p> : null}
                 <input class='submit-btn' type='submit'></input>
             </form>
     )

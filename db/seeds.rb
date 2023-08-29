@@ -35,16 +35,16 @@
 # ])
 
 sales = Sale.create([
-    {date: '2023-08-01', amount: 100, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-03', amount: 85, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-07', amount: 200, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-07', amount: 115, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-04', amount: 75, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-06', amount: 80, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-05', amount: 100, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-07', amount: 120, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-09', amount: 70, ambassador_id: 1, payment_report_id: 12},
-    {date: '2023-08-10', amount: 125, ambassador_id: 1, payment_report_id: 12}
+    {date: '2023-08-18', amount: 100, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-19', amount: 85, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-19', amount: 200, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-20', amount: 115, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-21', amount: 75, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-23', amount: 80, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-25', amount: 100, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-26', amount: 120, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-27', amount: 70, ambassador_id: 1, payment_report_id: 12},
+    {date: '2023-08-28', amount: 125, ambassador_id: 1, payment_report_id: 12}
 ])
 
 # admin = Admin.create({

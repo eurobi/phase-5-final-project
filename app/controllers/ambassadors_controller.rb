@@ -39,11 +39,20 @@ class AmbassadorsController < ApplicationController
         ambassador = Ambassador.create(ambassador_params)
         if ambassador.valid?
             session[:ambassador_id] = ambassador.id
-            render json: ambassador
+            render json: ambassador, status: :created
         else
-            render json: ambassador.errors
+            render json: {errors: ambassador.errors.full_messages}, status: :unprocessable_entity
         end
     end
+
+    def destroy
+        if session[:admin_id]
+            ambassador = Ambassador.find_by(id: params[:id])
+            ambassador.delete
+        end
+        render json: ambassador
+    end
+
 
     def accept
         ambassador = Ambassador.find_by(id: params[:id])

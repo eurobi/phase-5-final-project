@@ -28,12 +28,29 @@ function AmbassadorList({admin}){
 
     }
 
+    function handleDelete(id){
+        console.log(id)
+        fetch(`/ambassadors/${id}`,{
+            method: "DELETE"
+        }).then(r => {
+            if(r.ok){
+                r.json().then(ambassador => {
+                    setAmbassadors([...ambassadors].filter((amb)=> amb.id !== ambassador.id))
+                    setViewingMore()
+                })
+            }
+        })
+    }
+
     if(viewingMore){
         const ambassador = ambassadors.filter((amb)=> amb.id == viewingMore)
         return(
             <>
             <Dashboard admin={admin} ambassador={ambassador[0]}></Dashboard>
-            <button class='submit-btn' onClick={() => setViewingMore()}>Back to Ambassadors</button>
+            <div className="admin-ambassador-buttons">
+                <button class='submit-btn' onClick={() => setViewingMore()}>Back to Ambassadors</button>
+                <button class='submit-btn' onClick={() => handleDelete(viewingMore)}>Remove Ambassador</button>
+            </div>
             </>
         )
     }
