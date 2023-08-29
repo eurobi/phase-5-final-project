@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+An app where ambassadors can apply to promote you product. They will receive a promo code that will pay them commission every time someone uses it.
 
-* Ruby version
 
-* System dependencies
+## Installation and Usage
 
-* Configuration
 
-* Database creation
+- bundle install
+- npm install
+- rails db:migrate
 
-* Database initialization
+You can use the following commands to run the application:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
+- `npm start: run the frontend on [http://localhost:4000](http://localhost:4000)
